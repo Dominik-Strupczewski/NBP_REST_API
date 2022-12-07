@@ -5,8 +5,6 @@ import com.example.xCodeRestApi.Model.CurrenciesCodeJsonModel;
 import com.example.xCodeRestApi.Model.TableJsonModel;
 import com.example.xCodeRestApi.Service.WebService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,10 +23,9 @@ public class RestApiController {
 
     //PONG response
     @GetMapping("/status/ping")
-    public ResponseEntity.BodyBuilder pong(){
-        String pong = "PONG" ;
-        return (ResponseEntity.BodyBuilder) ResponseEntity.status(HttpStatus.CREATED)
-                .body(pong);
+    public String pong(){
+
+        return  "PONG" ;
     }
 
 
