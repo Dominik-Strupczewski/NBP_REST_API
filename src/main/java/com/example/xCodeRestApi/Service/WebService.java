@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class WebService  {
 
-   private final RestClient restClient ;
+    private final RestClient restClient ;
 
     public String getSortTable(List<TableJsonModel> table ) {
-        return restClient.getSortTable(table) ;
+        return restClient.getSortTable(table).orElseThrow() ;
     }
 
 

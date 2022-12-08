@@ -12,10 +12,11 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 
 @Component
-public abstract class RestClient {
+public class RestClient {
 
 
     public double getRateByCode(List<CurrenciesCodeJsonModel> code) throws IOException {
@@ -32,9 +33,10 @@ public abstract class RestClient {
     }
 
 
-    public String getSortTable(List<TableJsonModel> table) {
+    public Optional<String> getSortTable(List<TableJsonModel> table) {
 
         TableJsonModel table1 = table.get(0);
+
         Integer[] arr = table1.getNumbers().toArray(new Integer[0]);
         if (table1.getOrder().equals("ASC")) {
             Arrays.sort(arr);
@@ -45,7 +47,7 @@ public abstract class RestClient {
             return Arrays.toString(arr) ;}
 
 
-        return "a";
+        return "llll";
 
 
 
