@@ -2,11 +2,12 @@ package com.example.xCodeRestApi.Exception;
 
 import com.example.xCodeRestApi.Model.CurrenciesCodeJsonModel;
 
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.List;
 
-public class CurrencyNotFoundException extends IOException {
-    public CurrencyNotFoundException(List<CurrenciesCodeJsonModel> code) {
-        super("Currency not specified");
+public class CurrencyNotFoundException extends FileNotFoundException {
+    public CurrencyNotFoundException(List<CurrenciesCodeJsonModel> code ) {
+
+        super("Bad currency code or value type ={"  + code.get(0).getCurrency()+ "}" );
     }
 }

@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class InvalidValueTypeExceptionAdvice {
+public class InvalidValueExceptionAdvice {
 
     @ResponseBody
-    @ExceptionHandler(InvalidValueTypeException.class)
+    @ExceptionHandler(InvalidValueException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String InvalidValueHandler(InvalidValueTypeException ex)
+    public String InvalidValueHandler(InvalidValueException ex)
     {
         return ex.getMessage() ;
     }
